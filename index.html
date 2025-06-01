@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poetic Expressions | Your Digital Poetry Haven</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <nav>
+            <div class="logo">Poetic Expressions</div>
+            <ul class="nav-links">
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#genres">Genres</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1>Where Words Dance <span class="highlight">With Emotion</span></h1>
+            <p>Discover, create, and connect through the power of poetry</p>
+            <div class="search-container">
+                <input type="text" placeholder="Search poems, authors, or themes...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section id="explore" class="section">
+        <h2>Recently Added Poems</h2>
+        <div class="poem-grid">
+            <!-- Poem cards will be dynamically inserted here by JavaScript -->
+        </div>
+        <button class="load-more">Load More</button>
+    </section>
+
+    <section id="genres" class="section dark-bg">
+        <h2>Explore by Genre</h2>
+        <div class="genre-grid">
+            <div class="genre-card" data-genre="love">
+                <i class="fas fa-heart"></i>
+                <h3>Love</h3>
+                <p>Romantic, passionate, and heartfelt verses</p>
+            </div>
+            <div class="genre-card" data-genre="nature">
+                <i class="fas fa-leaf"></i>
+                <h3>Nature</h3>
+                <p>Celebrating the beauty of the natural world</p>
+            </div>
+            <div class="genre-card" data-genre="life">
+                <i class="fas fa-seedling"></i>
+                <h3>Life</h3>
+                <p>Reflections on the human experience</p>
+            </div>
+            <div class="genre-card" data-genre="fantasy">
+                <i class="fas fa-dragon"></i>
+                <h3>Fantasy</h3>
+                <p>Mythical realms and imaginative journeys</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Poetic Expressions</h2>
+                <p>Welcome to my digital poetry collection, where words come alive and emotions find their voice. This space is dedicated to sharing my poetic journey with fellow literature enthusiasts.</p>
+                <p>Each poem is a piece of my soul, crafted with care and shared with the hope that it resonates with you.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="number">127</span>
+                        <span class="label">Poems Published</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">24</span>
+                        <span class="label">Poetic Forms</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">1.8k</span>
+                        <span class="label">Reader Comments</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Writing poetry">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section dark-bg">
+        <h2>Connect With Me</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Send Me a Message</h3>
+                <form id="messageForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            <div class="social-links">
+                <h3>Follow My Journey</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-medium"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Subscribe to My Newsletter</h4>
+                    <p>Get new poems delivered to your inbox</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Poetic Expressions</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Submission Guidelines</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Poetic Expressions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Poem Modal -->
+    <div class="modal" id="poemModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="poem-title"></h2>
+            <p class="poem-author"></p>
+            <div class="poem-text"></div>
+            <div class="poem-meta">
+                <span class="poem-date"></span>
+                <span class="poem-genre"></span>
+            </div>
+            <div class="poem-actions">
+                <button class="like-btn"><i class="far fa-heart"></i> <span class="like-count">0</span></button>
+                <button class="comment-btn"><i class="far fa-comment"></i> Comment</button>
+                <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+            <div class="comments-section">
+                <h3>Reader Feedback</h3>
+                <div class="comments-list">
+                    <!-- Comments will appear here -->
+                </div>
+                <form class="comment-form">
+                    <textarea placeholder="Share your thoughts about this poem..." required></textarea>
+                    <button type="submit">Post Comment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
